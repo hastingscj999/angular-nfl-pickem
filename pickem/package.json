@@ -21,6 +21,6 @@
   "homepage": "https://github.com/n/a",
   "devDependencies": {},
   "dependencies": {
-    "angular": "^1.5.5"
+    "angular-ui-sortable": "^0.17.2"
   }
 }

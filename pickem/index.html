@@ -6,14 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Pickem app">
     <base href="/">
+    <link rel="stylesheet" href="pickem/app/styles/pickem.css">
 </head>
 <body ng-app="pickemApp">
 
 <h1>Football Pick'em</h1>
-<pick-em></pick-em>
+<pickem></pickem>
 
 </body>
-<script src="/node_modules/angular/angular.js"></script>
-<script src="/app/app.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="pickem/node_modules/angular-ui-sortable/src/sortable.js"></script>
+<script src="pickem/app/app.js"></script>
+<script src="pickem/app/pickemDirective.js"></script>
+<script src="pickem/app/pickemService.js"></script>
+<script src="pickem/app/pickemController.js"></script>
 
 </html>

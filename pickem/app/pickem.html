@@ -1,0 +1,32 @@
+<div ng-controller='pickemCtrl'>
+    <table>
+        <thead>
+            <th>
+            </th>
+            <th>
+                Matchup
+            </th>
+            <th>
+                Time
+            </th>
+            <th>Confidence Points</th>
+        </thead>
+        <tbody ui-sortable='sortOptions' ng-model='games'>
+            <tr ng-repeat='game in games'>
+                <td class="rowHandle">
+                    =
+                </td>
+                <td>
+                    {{generateMatchups()}}
+                </td>
+                <td>
+                    {{game.time}}
+                </td>
+                <td class="cp">
+                    {{$index + 1}}
+                </td>
+            </tr>
+        </tbody ui-sortable ng-model="rows">
+    </table>
+    {{games}}
+</div>

@@ -1,0 +1,46 @@
+select {
+    display: table;
+    margin: auto;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+
+
+td {
+    padding: 12px;
+}
+
+.cp {
+    text-align: center;
+}
+
+.rowHandle {
+    width: 50px;
+    height: 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: underline;
+    text-align: center;
+    cursor: move;
+}
+
+th {
+    border: none !important;
+}
+
+tr {
+    border: solid 1px #ccc;
+}
+
+th {
+    height: 60px;
+    text-transform: uppercase;
+    padding: 0 12px;
+}
