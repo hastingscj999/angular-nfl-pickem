@@ -2,7 +2,7 @@ angular.module('pickemApp')
     .controller('pickemCtrl', function($scope, PickemService) {
         $scope.games = PickemService.getGames();
         $scope.teams = PickemService.getTeams();
-        $scope.stepper = 0;
+        $scope.matchups = [];
 
 
 
@@ -14,13 +14,12 @@ angular.module('pickemApp')
             handle: '.rowHandle'
         };
 
+
         $scope.generateMatchups = function(){
-            if($scope.stepper <= 31){
-                var matchup = $scope.teams[$scope.stepper] + " vs " + $scope.teams[$scope.stepper+1];
-                $scope.stepper++;
-                if($scope.stepper % 2 == 0){
-                    console.log(matchup);
-                    return matchup;
+            for (var stepper = 0; stepper < 32; stepper++){
+                var matchup = "<input type='radio' />" + $scope.teams[stepper] + " vs " +  "<input type='radio' />" + $scope.teams[stepper+1];
+                if(stepper === 0 || stepper % 2 === 0){
+                    $scope.matchups.push(matchup);
                 }
             }
         }

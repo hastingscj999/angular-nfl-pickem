@@ -11,13 +11,14 @@
             </th>
             <th>Confidence Points</th>
         </thead>
-        <tbody ui-sortable='sortOptions' ng-model='games'>
-            <tr ng-repeat='game in games'>
+        <tbody ui-sortable='sortOptions' ng-model='matchups' ng-init="generateMatchups()">
+            <tr ng-repeat='matchup in matchups'>
                 <td class="rowHandle">
                     =
                 </td>
+                <!--<td ng-bind-html-unsafe="matchup">-->
                 <td>
-                    {{generateMatchups()}}
+                   <input type="radio" /> {{matchup}} <input type="radio" />
                 </td>
                 <td>
                     {{game.time}}
@@ -28,5 +29,4 @@
             </tr>
         </tbody ui-sortable ng-model="rows">
     </table>
-    {{games}}
 </div>
