@@ -16,10 +16,7 @@
                 <td class="rowHandle">
                     =
                 </td>
-                <!--<td ng-bind-html-unsafe="matchup">-->
-                <td>
-                   <input type="radio" /> {{matchup}} <input type="radio" />
-                </td>
+                <td ng-bind-html="matchup | sanitize">
                 <td>
                     {{game.time}}
                 </td>

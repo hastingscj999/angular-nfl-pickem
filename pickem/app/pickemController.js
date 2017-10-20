@@ -1,4 +1,9 @@
 angular.module('pickemApp')
+    .filter("sanitize", ['$sce', function($sce) {
+        return function(htmlCode){
+            return $sce.trustAsHtml(htmlCode);
+        }
+    }])
     .controller('pickemCtrl', function($scope, PickemService) {
         $scope.games = PickemService.getGames();
         $scope.teams = PickemService.getTeams();
@@ -14,10 +19,14 @@ angular.module('pickemApp')
             handle: '.rowHandle'
         };
 
+        $scope.picks = document.getElementsByClassName('pick');
+
+
+
 
         $scope.generateMatchups = function(){
             for (var stepper = 0; stepper < 32; stepper++){
-                var matchup = "<input type='radio' />" + $scope.teams[stepper] + " vs " +  "<input type='radio' />" + $scope.teams[stepper+1];
+                var matchup = "<input type='radio' class='pick' /> " + $scope.teams[stepper] + " vs " +  $scope.teams[stepper+1] + " <input type='radio'  class='pick'  />";
                 if(stepper === 0 || stepper % 2 === 0){
                     $scope.matchups.push(matchup);
                 }
